@@ -5,7 +5,11 @@
 #include <caloreco/CaloTowerCalib.h>
 #include <caloreco/CaloWaveformProcessing.h>
 
+#include <Detinfo.h>
+
 #include <mbd/MbdReco.h>
+
+#include <epd/EpdReco.h>
 
 #include <zdcinfo/ZdcReco.h>
 
@@ -46,6 +50,9 @@ R__LOAD_LIBRARY(libzdcinfo.so)
 R__LOAD_LIBRARY(libglobalvertex.so)
 R__LOAD_LIBRARY(libcalovalid.so)
 R__LOAD_LIBRARY(libglobalQA.so)
+R__LOAD_LIBRARY(libepd.so)
+R__LOAD_LIBRARY(libDetinfo.so)
+
 
 void Fun4All_Year2(int nEvents = 100, const std::string &dbtag = "ProdA_2024")
 {
