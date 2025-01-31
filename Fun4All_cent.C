@@ -109,7 +109,7 @@ void Fun4All_cent(int nEvents = 100, const std::string &dbtag = "ProdA_2024")
    //sEPD Reconstruction--Calib Info
    EpdReco *epdreco = new EpdReco();
    se->registerSubsystem(epdreco);
-    
+ /*   
     MinimumBiasClassifier *mb = new MinimumBiasClassifier();
     mb->setOverwriteScale("/sphenix/user/dlis/Projects/centrality/cdb/calibrations/scales/cdb_centrality_scale_54280.root");            // Temoporary fix
     mb->setOverwriteVtx("/sphenix/user/dlis/Projects/centrality/cdb/calibrations/vertexscales/cdb_centrality_vertex_scale_54280.root"); // Temoporary fix
@@ -121,7 +121,7 @@ void Fun4All_cent(int nEvents = 100, const std::string &dbtag = "ProdA_2024")
     centralityreco->setOverwriteVtx("/sphenix/user/dlis/Projects/centrality/cdb/calibrations/vertexscales/cdb_centrality_vertex_scale_54280.root");
     centralityreco->setOverwriteDivs("/sphenix/user/dlis/Projects/centrality/cdb/calibrations/divs/cdb_centrality_54280.root");
     se->registerSubsystem(centralityreco);
-
+*/
 
     gSystem->Load("libDetinfo.so.0.0.0");
     Detinfo *detana = new Detinfo();
