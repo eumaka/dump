@@ -130,12 +130,6 @@ void Fun4All_Year2(int nEvents = 100, const std::string &dbtag = "ProdA_2024")
   In->AddFile(filein);
   se->registerInputManager(In);
 
-  Fun4AllDstOutputManager *out = new Fun4AllDstOutputManager("DSTOUT", outfile);
-  out->StripNode("ZDCPackets");
-  out->StripNode("SEPDPackets");
-  out->StripNode("MBDPackets");
-  se->registerOutputManager(out);
-
   se->run(nEvents);
   se->End();
 
