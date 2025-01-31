@@ -93,12 +93,12 @@ void Fun4All_cent(int nevents = 1001)
           GlobalVertexReco *gvertex = new GlobalVertexReco();
           se->registerSubsystem(gvertex);
 
-          CaloTowerBuilder *ctbEMCal = new CaloTowerBuilder("SEPD");
-          ctbEMCal->set_detector_type(CaloTowerDefs::SEPD);
-          ctbEMCal->set_processing_type(CaloWaveformProcessing::FAST);
-          ctbEMCal->set_builder_type(buildertype);
-          ctbEMCal->set_nsamples(12);
-          se->registerSubsystem(ctbEMCal);
+          CaloTowerBuilder *ca2 = new CaloTowerBuilder("SEPD");
+          ca2->set_detector_type(CaloTowerDefs::SEPD);
+          ca2->set_processing_type(CaloWaveformProcessing::FAST);
+          ca2->set_builder_type(buildertype);
+          ca2->set_nsamples(12);
+          se->registerSubsystem(ca2);
 
           //sEPD Reconstruction--Calib Info
           EpdReco *epdreco = new EpdReco();
