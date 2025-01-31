@@ -46,9 +46,8 @@ R__LOAD_LIBRARY(libeventplaneinfo.so)
 
 #endif
 
-void Fun4All_cent(int nevents = 1001)
+void Fun4All_cent(int nevents = 2)
 {
-    CaloTowerDefs::BuilderType buildertype = CaloTowerDefs::kWaveformTowerv2;
 
     Fun4AllServer *se = Fun4AllServer::instance();
     recoConsts *rc = recoConsts::instance();
@@ -75,13 +74,22 @@ void Fun4All_cent(int nevents = 1001)
           MbdReco *mbdreco = new MbdReco();
           se->registerSubsystem(mbdreco);
  
-
+/*
          CaloTowerBuilder *ca1 = new CaloTowerBuilder("zdc");
          ca1->set_detector_type(CaloTowerDefs::ZDC);
          ca1->set_nsamples(16);
          ca1->set_builder_type(CaloTowerDefs::kPRDFWaveform);
          ca1->set_processing_type(CaloWaveformProcessing::FAST);
          se->registerSubsystem(ca1);
+  */     
+        CaloTowerDefs::BuilderType buildertype = CaloTowerDefs::kPRDFTowerv4;
+        CaloTowerBuilder *caZDC = new CaloTowerBuilder("ZDCBUILDER");
+        caZDC->set_detector_type(CaloTowerDefs::ZDC);
+        caZDC->set_builder_type(buildertype);
+        caZDC->set_processing_type(CaloWaveformProcessing::FAST);
+        caZDC->set_nsamples(16);
+        caZDC->set_offlineflag();
+        se->registerSubsystem(caZDC);
 
 
           // ZDC Reconstruction--Calib Info
