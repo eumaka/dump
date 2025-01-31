@@ -54,7 +54,7 @@ R__LOAD_LIBRARY(libepd.so)
 R__LOAD_LIBRARY(libDetinfo.so)
 
 
-void Fun4All_Year2(int nEvents = 100, const std::string &dbtag = "ProdA_2024")
+void Fun4All_cent(int nEvents = 100, const std::string &dbtag = "ProdA_2024")
 {
   // towerinfov1=kPRDFTowerv1, v2=:kWaveformTowerv2, v3=kPRDFWaveform, v4=kPRDFTowerv4
   CaloTowerDefs::BuilderType buildertype = CaloTowerDefs::kPRDFTowerv4;
