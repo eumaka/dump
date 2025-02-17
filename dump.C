@@ -23,7 +23,6 @@
             {
                 continue;
             }
-            std::vector<int> _NClus = {0, 0};
             for (const auto &hitsetkey : dst_clustermap->getHitSetKeys(TrkrDefs::inttId))
             {
                 auto range = dst_clustermap->getClusters(hitsetkey);
@@ -33,9 +32,7 @@
                     TrkrCluster *cluster = dst_clustermap->findCluster(ckey);
                     unsigned int trkrId = TrkrDefs::getTrkrId(ckey);
                     if (trkrId != TrkrDefs::inttId)
-                        continue; // we want only INTT clusters
-                    int layer = (TrkrDefs::getLayer(ckey) == 3 || TrkrDefs::getLayer(ckey) == 4) ? 0 : 1;
-                    _NClus[layer]++;
+                    continue; // only INTT clusters
                     if (cluster == nullptr)
                     {
                         std::cout << "cluster is nullptr, ckey=" << ckey << std::endl;
@@ -45,7 +42,7 @@
                     TVector3 pos(globalpos(0), globalpos(1), globalpos(2));
 
                    ClusPhi_.push_back(pos.Phi());
-                         }
+                }
 
             }
 
